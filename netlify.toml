@@ -6,94 +6,23 @@
   NODE_VERSION = "16"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# Redirect root to products page (main page)
-[[redirects]]
-  from = "/"
-  to = "/server/pages/products.html"
-  status = 200
-
-# Redirect all other routes to corresponding HTML files
+# API routes
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Handle specific page routes
+# Handle static assets
 [[redirects]]
-  from = "/products"
-  to = "/server/pages/products.html"
+  from = "/_next/*"
+  to = "/_next/:splat"
   status = 200
 
-[[redirects]]
-  from = "/cart"
-  to = "/server/pages/cart.html"
-  status = 200
-
-[[redirects]]
-  from = "/login"
-  to = "/server/pages/login.html"
-  status = 200
-
-[[redirects]]
-  from = "/signup"
-  to = "/server/pages/signup.html"
-  status = 200
-
-[[redirects]]
-  from = "/profile"
-  to = "/server/pages/profile.html"
-  status = 200
-
-[[redirects]]
-  from = "/wishlist"
-  to = "/server/pages/wishlist.html"
-  status = 200
-
-[[redirects]]
-  from = "/checkout"
-  to = "/server/pages/checkout.html"
-  status = 200
-
-[[redirects]]
-  from = "/forgot-password"
-  to = "/server/pages/forgot-password.html"
-  status = 200
-
-[[redirects]]
-  from = "/become-seller"
-  to = "/server/pages/become-seller.html"
-  status = 200
-
-[[redirects]]
-  from = "/tracking-order"
-  to = "/server/pages/tracking-order.html"
-  status = 200
-
-[[redirects]]
-  from = "/verify-you"
-  to = "/server/pages/verify-you.html"
-  status = 200
-
-[[redirects]]
-  from = "/products-compaire"
-  to = "/server/pages/products-compaire.html"
-  status = 200
-
-[[redirects]]
-  from = "/pages"
-  to = "/server/pages/pages.html"
-  status = 200
-
-[[redirects]]
-  from = "/order/*"
-  to = "/server/pages/order/[id].html"
-  status = 200
-
-# Fallback for 404
+# Fallback for SPA routing - redirect to index.html
 [[redirects]]
   from = "/*"
-  to = "/server/pages/404.html"
-  status = 404
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
