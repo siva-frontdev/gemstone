@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const runtimeCaching = require("next-pwa/cache");
 const withPWA = require('next-pwa');
-const { hostname } = process.env.NEXT_PUBLIC_BASE_URL ? new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`) : { hostname: 'localhost' };
+const { hostname } = new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`);
 const nextConfig={
   reactStrictMode: true,
   swcMinify: true,

@@ -13,12 +13,8 @@ export default function HomePage({ data }) {
   );
 }
 export async function getServerSideProps() {
-  // Return mock data for build
-  const data = {
-    seoSetting: {
-      seo_title: "ShopUs - Multivendor Fashion Ecommerce",
-      seo_description: "Fashion ecommerce platform"
-    }
-  };
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/`);
+  const data = await res.json();
   return { props: { data } };
 }

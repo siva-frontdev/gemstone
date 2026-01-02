@@ -1,4 +1,3 @@
-import React from "react";
 import PageHead from "../src/components/Helpers/PageHead";
 import Layout from "../src/components/Partials/Layout";
 import Sallers from "../src/components/Sellers/index";

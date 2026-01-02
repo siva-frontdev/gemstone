@@ -38,5 +38,5 @@ module.exports = {
       borderColor: ["last"],
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };

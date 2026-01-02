@@ -1,4 +1,3 @@
-import React from "react";
 import PageHead from "../src/components/Helpers/PageHead";
 import TermsCondition from "../src/components/TermsCondition/index";
 export default function termsConditionPage({ data }) {
