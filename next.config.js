@@ -6,8 +6,12 @@ const nextConfig={
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [`${hostname}`]
+    domains: [`${hostname}`],
+    unoptimized: true
   },
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'out'
 }
 const pwa = process.env.NEXT_PWA_STATUS;
 const nextConfigWithPwa = withPWA({
